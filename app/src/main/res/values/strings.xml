@@ -4,4 +4,6 @@
     <string name="nota_hint">Nota</string>
     <string name="data_ultima_modifica">Ultima Modifica:</string>
     <string name="salva">Salva</string>
+    <string name="cancel_ok">Nota eliminata</string>
+    <string name="annulla">Annulla</string>
 </resources>

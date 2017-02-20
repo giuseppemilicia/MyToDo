@@ -29,6 +29,11 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.NotaAdapterVH>
         notifyItemInserted(dataSet.size() - 1);
     }
 
+    public void addNota(int position, Nota nota) {
+        dataSet.add(position, nota);
+        notifyItemInserted(position);
+    }
+
     public Nota getNotaByIndice(int indice) {
         return dataSet.get(indice);
     }
@@ -80,12 +85,24 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.NotaAdapterVH>
             linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    removeNota(getNotaByIndice(getAdapterPosition()));
-                    Snackbar snackbar = Snackbar.make(v, "Nota eliminata", Snackbar.LENGTH_SHORT);
-                    snackbar.show();
+                    snackbar(v);
                     return true;
                 }
             });
+        }
+
+        public void snackbar(View v) {
+            final int position = getAdapterPosition();
+            final Nota temp = getNotaByIndice(getAdapterPosition());
+            removeNota(getNotaByIndice(getAdapterPosition()));
+            Snackbar snackbar = Snackbar.make(v, v.getResources().getString(R.string.cancel_ok), Snackbar.LENGTH_LONG);
+            snackbar.setAction(v.getResources().getString(R.string.annulla), new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    addNota(position, temp);
+                }
+            });
+            snackbar.show();
         }
 
         @Override
@@ -96,6 +113,7 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.NotaAdapterVH>
             intent.putExtra(NotaActivity.CORPO_KEY, corpoTv.getText().toString());
             intent.setAction(MainActivity.ACTION_MODIFY);
             ((MainActivity) v.getContext()).startActivityForResult(intent, MainActivity.MODIFY_REQUEST_CODE);
+
         }
     }
 }
