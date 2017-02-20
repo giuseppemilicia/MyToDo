@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_grey_200">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_below="@id/toolbar"
+        android:id="@+id/titolo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/titolo_hint"
+        android:textStyle="bold"
+        style="@style/MyEditText"/>
+
+    <EditText
+        android:layout_below="@id/titolo"
+        android:id="@+id/corpo"
+        android:layout_width="match_parent"
+        android:gravity="start"
+        android:layout_height="fill_parent"
+        android:hint="@string/nota_hint"
+        style="@style/MyEditText"/>
+
+    <android.support.v7.widget.Toolbar
+        android:layout_alignParentBottom="true"
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:titleTextColor="@android:color/white">
+
+        <TextView
+            android:layout_gravity="start"
+            android:id="@+id/data_ultima_modifica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_ultima_modifica"
+            />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_gravity="end"
+            android:width="0dp"
+            android:height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salva"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+
+    </android.support.v7.widget.Toolbar>
+
+</RelativeLayout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyToDo</string>
+    <string name="titolo_hint">Titolo</string>
+    <string name="nota_hint">Nota</string>
+    <string name="data_ultima_modifica">Ultima Modifica:</string>
+    <string name="salva">Salva</string>
 </resources>
