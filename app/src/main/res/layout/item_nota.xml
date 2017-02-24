@@ -1,26 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:id="@+id/nota_linear_layout"
+<me.giuseppemilicia.mytodo.views.layouts.RoundCornerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nota_frame_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/material_light_white"
     android:layout_margin="@dimen/material_component_cards_space_between_cards"
-    android:padding="@dimen/material_component_cards_padding_from_edge_of_screen_to_card">
+    android:clickable="true"
+    android:foreground="@drawable/anim"
+    app:corner_radius="3dp">
 
-    <TextView
-        android:id="@+id/nota_titolo"
-        android:text="Titolo"
-        android:textSize="@dimen/material_component_lists_two_line_text_size"
-        android:textStyle="bold"
+    <RelativeLayout
+        android:id="@+id/nota_relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/material_component_cards_padding_from_edge_of_screen_to_card">
 
-    <TextView
-        android:id="@+id/nota_corpo"
-        android:text="Corpo"
-        android:textSize="@dimen/material_component_lists_two_line_secondary_text_size"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/nota_mark_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:maxWidth="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_pin_vector_24dp"
+            android:tint="@color/mark_item"
+            android:visibility="invisible" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/nota_titolo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/nota_mark_special"
+            android:text="Titolo"
+            android:textColor="@color/material_light_black"
+            android:textSize="@dimen/material_component_lists_two_line_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nota_corpo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nota_titolo"
+            android:text="Corpo"
+            android:textSize="@dimen/material_component_lists_two_line_secondary_text_size" />
+
+    </RelativeLayout>
+</me.giuseppemilicia.mytodo.views.layouts.RoundCornerFrameLayout>

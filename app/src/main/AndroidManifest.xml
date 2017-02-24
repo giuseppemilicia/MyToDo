@@ -13,9 +13,16 @@
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:mimeType="text/plain"></data>
+            </intent-filter>
         </activity>
 
-        <activity android:name=".activities.NotaActivity"></activity>
+        <activity
+            android:name=".activities.NotaActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
 
     </application>
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="colors">
+        <item name="white">@color/material_light_white</item>
+        <item name="red">#ff8a80</item>
+        <item name="orange">#ffd180</item>
+        <item name="yellow">#ffff8d</item>
+        <item name="grey">#cfd8dc</item>
+        <item name="blue">#80d8ff</item>
+        <item name="teal">#a7ffeb</item>
+        <item name="green">#ccff90</item>
+    </array>
+</resources>

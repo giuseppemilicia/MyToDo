@@ -6,4 +6,10 @@
     <string name="salva">Salva</string>
     <string name="cancel_ok">Nota eliminata</string>
     <string name="annulla">Annulla</string>
+    <string name="modifica">Modifica</string>
+    <string name="select_items">Note Selezionate</string>
+    <string name="elimina">Elimina</string>
+    <string name="cancels_ok">Note Eliminate</string>
+    <string name="colore">Cambia Colore</string>
+    <string name="speciale">Speciale</string>
 </resources>
